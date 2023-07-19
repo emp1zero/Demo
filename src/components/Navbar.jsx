@@ -1,99 +1,145 @@
 import React from 'react'
 import { useState } from 'react'
-import './nav.css'
 import styled from 'styled-components'
 import myImage from '../images/logo.svg'
-import {Link,} from 'react-router-dom'
+import {Link as LinkR,} from 'react-router-dom'
+import  {Link as LinkS} from 'react-scroll'
 import {FaBars} from 'react-icons/fa'
+import {FaWindowClose} from 'react-icons/fa'
 
+const Nav=styled.nav`
+  height: 80px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //margin-top: -80px;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  @media screen and (max-width:960px) {
+    transition: 0.8s all ease ;
+  }
+`;
 const NavContainer=styled.div`
   display: flex;
-  height: 100%;
   justify-content: space-between;
-  align-items: center;
-
-  @media only screen and (max-width:600px ){
-  display: flex;
-  flex-direction: column;
+  height: 80px;
+  z-index: 1;
+  padding: 0 24px;
+  max-width: 1100px;
+  width: 100%;
+  background-color: black;
+`;
+const NavLogo=styled(LinkR)`
+  color:#fff;
   justify-content: flex-start;
-  align-items: flex-start;
-
-  };
-  
-`;
-const LogoContainer=styled.div`
-  display: flex;
-  justify-content: space-between;
-
-@media only screen and (max-width:600px){
-display: flex;
-width: 100%;
-}
-
-`
-const Logo=styled.img`
-width: 100px;
-height: 100px;
-  
-`;
-const NavLink=styled(Link)`
-`;
-
-const NavMenu=styled.ul`
-display: flex;
-gap: 15px;
-@media only screen and (max-width:600px){
-  flex-direction: column;
-}
-`;
-const NavMenuItems=styled.li`
-  
-`;
-const NavButton=styled.button`
-  
-`;
-const Toggle=styled.div`
-  display: none;
-  @media only screen and (max-width:600px ){
-  font-size: 8px;
+  cursor: pointer;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
-  }
-  
+  margin-left: 24px;
+  font-weight: bold;
+  text-decoration: none;
 `;
-const Navbar = () => {
-  const [isNavShowing,setIsNanShowing]=useState(false );
-  const handleNavToggle=()=>{
-    setIsNanShowing(!isNavShowing);
+const ToggleIcon=styled.div`
+  display: none;
+  @media screen and (max-width:768px){
+    display: block;
+    position: absolute;
+    top: 0;
+    color:#fff;
+    right: 0;
+    transform: translate(-100px,60%);
+    font-size: 1.8rem;
+    cursor: pointer;
   }
+`;
+const NavMenu =styled.ul`
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  margin-right: -22px;
+  @media screen and (max-width:768px){
+    display: none;
+  }
+`;
+const NavItem= styled.li`
+  height: 80px;
+
+`;
+const NavLinks= styled(LinkS)`
+color:#fff;
+align-items:center;
+height:100%;
+display:flex;
+text-decoration: none;
+padding: 0 1rem;
+cursor: pointer;
+&:active{
+  border-bottom: 3px solid #01bf71;
+}
+`;
+const NavButton = styled.nav`
+  display: flex;
+  align-items: center;
+  @media screen and (max-width:768px){
+    display: none;
+  }
+`;
+const NavButtonLink = styled(LinkR)`
+  border-radius: 50px;
+  background: #01bf71;
+  white-space: nowrap;
+  padding: 10px 22px;
+  color: #010606;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover{
+    transition:all 0.2s ease-in-out; 
+    background:#fff;
+    color: #010606;
+  }
+`
+
+
+const Navbar = ({toggle}) => {
   return (
+
+    <Nav>
+      <NavContainer>
+        <NavLogo to='/'>HeavensGym</NavLogo>
+        <ToggleIcon onClick={toggle}>
+          <FaBars/>
+        </ToggleIcon>
+        <NavMenu>
+          <NavItem>
+            <NavLinks to='about'>About</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks to='discover'>Discover</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks to='/services'>Services</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks to='signup'>Sign Up</NavLinks>
+          </NavItem>
+        </NavMenu>
+        <NavButton>
+          <NavButtonLink to='/signin'>Sign In</NavButtonLink>
+          </NavButton>
+      </NavContainer>
+    </Nav>
     
-  <nav>
-
-<NavContainer>
-  <LogoContainer>
-    <Link to='/'> <Logo src={myImage}/></Link>
-    <Toggle onClick={handleNavToggle}><FaBars/></Toggle>
-
-  </LogoContainer>
-  
-  {isNavShowing?<NavMenu handleNavToggle={handleNavToggle}>
-  <NavMenuItems><NavLink to='/features'>Features</NavLink></NavMenuItems>
-  <NavMenuItems><NavLink to='/blog'>Blog</NavLink></NavMenuItems>
-  <NavMenuItems><NavLink to='/features'>Features</NavLink></NavMenuItems>
-  <NavMenuItems><NavLink to='/customerstories'>Customer Stories</NavLink></NavMenuItems>
-  <NavMenuItems><NavLink to='/pricing'>Pricing</NavLink></NavMenuItems>
-  <NavMenuItems><NavLink to='/signup'><NavButton>Sign Up</NavButton></NavLink></NavMenuItems>
-  </NavMenu>
-    :null}
- 
-
-</NavContainer>
-
-
-
-  </nav>
   )
 }
+
 
 export default Navbar
