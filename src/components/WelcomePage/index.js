@@ -18,12 +18,12 @@ const WelcomePage = () => {
       return (
         <WelcomeContainer>
             <WelcomeBg>
-    <VideoBg autoPlay  muted  src={video} type='video/mp4'/>
+    <VideoBg autoPlay loop muted  src={video} type='video/mp4'/>
             </WelcomeBg>
             <WelcomeContent>
                 <WelcomeH1>Build up and Suit Up</WelcomeH1>
                 <WelcomeP>
-                    Become a member today and 
+                    Become a member from Anywhere in the World today and 
                     receive free membership for a month
                 </WelcomeP>
                 <WelcomeBtnWrapper>
@@ -31,7 +31,12 @@ const WelcomePage = () => {
                     onMouseEnter={onHover}
                     onMouseLeave={onHover}
                     primary='true'
-                    dark='true'>Get Started{hover ? <ArrowRight/>:<ArrowForward/>}
+                    dark='true'
+                    smooth={true} 
+                    duration={500}
+                    spy={true}
+                    exact='true'
+                    offset={-80}>Get Started{hover ? <ArrowRight/>:<ArrowForward/>}
                     </Button>
                 </WelcomeBtnWrapper>
             </WelcomeContent>

@@ -5,11 +5,12 @@ import  {Link as LinkS} from 'react-scroll'
 
 export const Nav=styled.nav`
   height: 80px;
-  background: #000;
+  background:${({scrollNav})=>(scrollNav ? '#000':'#040f0b' )};
+  transition: 0.8s ease-in;
   display: flex;
   align-items: center;
+  margin-bottom: -80px;
   justify-content: center;
-  //margin-top: -80px;
   font-size: 1rem;
   position: sticky;
   top: 0;
@@ -26,7 +27,7 @@ export const NavContainer=styled.div`
   padding: 0 24px;
   max-width: 1100px;
   width: 100%;
-  background-color: black;
+ 
 `;
 export const NavLinkLogo=styled(LinkR)`
    justify-content: flex-start;
@@ -35,6 +36,8 @@ export const NavLinkLogo=styled(LinkR)`
 `;
 export const Logo=styled.img`
   cursor: pointer;
+  width: 100px;
+  height: 100px;
 `
 export const ToggleIcon=styled.div`
   display: none;
@@ -76,8 +79,8 @@ cursor: pointer;
   border-bottom: 3px solid #01bf71;
 }
 
-&:active{
-  border-bottom: 3px solid #fff;
+&.active{
+  border-bottom: 3px solid #01bf71;
 }
 `;
 export const NavButton = styled.nav`

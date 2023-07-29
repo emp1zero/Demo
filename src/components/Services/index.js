@@ -14,19 +14,19 @@ import {
 
 const Services = () => {
   return (
-    <ServicesContainer id="Services">
+    <ServicesContainer id="services">
       <ServicesH1>Our Services</ServicesH1>
       <ServicesWrapper>
         <ServicesCard>
           <ServicesIcon src={Icon1} />
-          <ServicesH2>Reduce EXpenses</ServicesH2>
+          <ServicesH2>Reduce Expenses</ServicesH2>
           <ServicesP>
-            we help reduce fess and increase your overall revenue
+            Train with the best For Less!!!
           </ServicesP>
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon2} />
-          <ServicesH2>Virtual Offices </ServicesH2>
+          <ServicesH2>Online Classes </ServicesH2>
           <ServicesP>
             You can access our platform anywhere in the world
           </ServicesP>
