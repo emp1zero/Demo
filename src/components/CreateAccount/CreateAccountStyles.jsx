@@ -16,7 +16,7 @@ export const FormContainer= styled.div`
 `;
 
 export const FormWrap=styled.div`
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +54,7 @@ export const Form =styled.form`
     z-index: 1;
     display: grid;
     margin: 0 auto;
-    padding: 80px 32px;
+    padding: 60px 32px;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.9);
 
@@ -64,7 +64,7 @@ export const Form =styled.form`
 `;
 
 export const FormH1=styled.h1`
-    margin-top: 40px;
+ margin-bottom: 40px;
     color: #fff;
     font-size: 20px;
     font-weight: 400;
@@ -76,7 +76,7 @@ export const FormLabel=styled.label`
     color: #fff;
 `;
 export const FormInput=styled.input`
-    padding: 16px 16px;
+    padding: 10px 10px;
     margin-bottom: 32px;
     border: none;
     border-radius: 4px;
@@ -108,4 +108,17 @@ export const Text2=styled(Link)`
     color: #fff;
     font-size: 14px;
     text-decoration: none;
+`;
+export const ErrorMessage=styled.span`
+    color: red;
+    margin-top: -30px;
+    font-size: 10px;
+   
+   &:hover{
+    font-size: 12px;
+    transition: 0.3s ease-in;
+   }
+   &:active{
+    opacity: 0;
+   }
 `;

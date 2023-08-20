@@ -2,7 +2,9 @@ import { BrowserRouter,Routes,Route} from 'react-router-dom';
 import { createGlobalStyle ,} from 'styled-components';
 import Home from './pages'
 import SigninPage from './pages/signin'
+import DashboardPage from './pages/dashboard';
 import CreateAccountPage from './pages/createaccount';
+
 
 
 
@@ -27,6 +29,7 @@ const App = () =>{
     <Route path='/' element={<Home/>}/>
    <Route path='/signin' element={<SigninPage/>}/>
    <Route path='/createaccount' element={<CreateAccountPage/>}/>
+   <Route path='/dashboard' element={<DashboardPage/>}/>
       </Routes>
     </BrowserRouter>
     </>

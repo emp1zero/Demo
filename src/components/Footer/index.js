@@ -66,23 +66,23 @@ const Footer = () => {
                     <WebsiteRights>Pulse (C) {new Date().getFullYear()}
                        All rights reserved</WebsiteRights>
                     <SocialIcons>
-                        <SocialIconLink href='/' target='_blank' 
+                        <SocialIconLink href='/' 
                         aria-label='Facebook'>
                             <FaFacebook/>
                         </SocialIconLink>
-                        <SocialIconLink href='/' target='_blank' 
+                        <SocialIconLink href='/'  
                         aria-label='Instagram'>
                             <FaInstagram/>
                         </SocialIconLink>
-                        <SocialIconLink href='/' target='_blank' 
+                        <SocialIconLink href='/'  
                         aria-label='Youtube'>
                             <FaYoutube/>
                         </SocialIconLink>
-                        <SocialIconLink href='/' target='_blank' 
+                        <SocialIconLink href='/'  
                         aria-label='Twitter'>
                             <FaTwitter/>
                         </SocialIconLink>
-                        <SocialIconLink href='/' target='_blank' 
+                        <SocialIconLink href='/' 
                         aria-label='Linkedin'>
                             <FaLinkedin/>
                         </SocialIconLink>

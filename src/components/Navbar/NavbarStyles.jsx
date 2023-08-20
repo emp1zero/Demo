@@ -76,7 +76,7 @@ padding: 0 1rem;
 cursor: pointer;
 
 &:hover{
-  border-bottom: 3px solid #01bf71;
+  border-bottom: 3px solid #fff;
 }
 
 &.active{

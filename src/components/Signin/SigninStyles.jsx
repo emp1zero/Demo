@@ -84,7 +84,7 @@ export const FormInput=styled.input`
 
 export const FormButton=styled.button`
 background: #01bf71;
-    padding: 16px 0;
+    padding: 14px 0;
     border: none;
     border-radius: 4px;
     color: #fff;
@@ -109,3 +109,33 @@ export const Text2=styled(Link)`
     font-size: 14px;
     text-decoration: none;
 `;
+
+export const ErrorMessage=styled.span`
+    color: red;
+    margin-top: -30px;
+    font-size: 10px;
+   
+   &:hover{
+    font-size: 12px;
+    transition: 0.3s ease-in;
+   }
+   &:active{
+    opacity: 0;
+   }
+`;
+export const ButtonContainer=styled.div`
+margin-top: 10px;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+`
+export const Button= styled.button`
+  background: #fff;
+    padding: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 4px;
+    color: #000;
+    font-size: 20px;
+    cursor: pointer;
+`
