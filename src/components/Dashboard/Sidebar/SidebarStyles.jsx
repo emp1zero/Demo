@@ -1,12 +1,25 @@
 import styled from "styled-components";
 import {Link as LinkI} from 'react-router-dom'
 
-export const SideBarContainer=styled.div`
+export const SideBarContainer=styled.aside`
     grid-area: sidebar;
+    position: absolute;
     height: 100%;
     background-color: #1f5751;
     overflow-y: auto;
     transition: all 0.5s;
+   
+    @media screen and (max-width:992px)
+    {
+        opacity:${({isOpen})=>(isOpen?'100%':'0')};
+        top:${({isOpen})=>(isOpen?'0':'-100%')};
+        z-index: 999;
+        position: absolute;
+        height: 100%;
+        background-color: #1f5751;
+        overflow-y: auto;
+        transition: all 0.5s;
+    }
 
 `
 export const SideBarTitle=styled.div`
@@ -38,6 +51,15 @@ export const IconHeader=styled.div`
 
 export const IconClose=styled.span`
 display: none;
+@media screen and (max-width:992px)
+{
+    display: block;
+ position: absolute;
+top: 55px;
+left: 150px;
+cursor: pointer; 
+color: #fff;
+}
 `;
 export const SideBarList=styled.ul`
 display: flex;
@@ -60,10 +82,3 @@ export const SideBarHeaderColor=styled(LinkI)`
     color: #fff;
     padding:20px; 
 `;
-export const SideBarResponsive=styled.div`
-    display: inline;
-    grid-area: sidebar;
-    height: 100%;
-    position: absolute;
-    z-index: 12;
-`

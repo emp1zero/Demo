@@ -23,7 +23,14 @@ export const DashboardContainer=styled.div`
   grid-template-rows: 0.2fr 3fr;
   grid-template-areas: 
   'Sidebar header header header'
-  'Sidebar main main main'
-  ;
+  'Sidebar main main main';
   height: 100vh;
+  @media screen and (max-width:992px){
+    grid-template-columns:1fr;
+    grid-template-rows:0.2fr 3fr;
+    grid-template-areas:
+    'header'
+    'main';
+  }
+  ;
 `;

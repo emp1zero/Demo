@@ -9,12 +9,13 @@ SideBarList,
 SideBarItems,
 SideBarHeaderColor,
 IconHeader,
-SideBarResponsive} from './SidebarStyles'
+SideBarResponsive
+} from './SidebarStyles'
   import {BsCart3,BsGrid1X2Fill,BsFillArchiveFill,
   BsFillGrid3X3GapFill,BsPeopleFill,BsFillArrowLeftSquareFill,
 BsListCheck,BsMenuButtonWideFill,BsFillGearFill} from 'react-icons/bs'
 
-const Sidebar = () => {
+const Sidebar = ({isOpen,toggle}) => {
 const navigate=useNavigate();
 
   const SignUserOut = async()=>{
@@ -28,13 +29,13 @@ const navigate=useNavigate();
   
     
     
-      <SideBarResponsive>
-        <SideBarContainer>
+      
+        <SideBarContainer isOpen={isOpen} >
       <SideBarTitle>
       <SideBarBrand>
       <SideBarHeaderColor to=''><IconHeader><BsCart3/></IconHeader>Shop</SideBarHeaderColor>
       </SideBarBrand>
-      <IconClose>X</IconClose>
+      <IconClose onClick={toggle}>X</IconClose>
       </SideBarTitle>
       <SideBarList>
 
@@ -72,7 +73,7 @@ const navigate=useNavigate();
 
       </SideBarList>
       </SideBarContainer>
-      </SideBarResponsive>
+     
     
    
   )

@@ -6,11 +6,14 @@ import {
 import { HeaderContainer, HeaderLeft, HeaderRight,
    Iconstyles, MenuIcon } from './HeaderStyles'
 
-const Header = () => {
+
+const Header = ({toggle}) => {
+
+
   return (
     <HeaderContainer>
-<MenuIcon>
- <Iconstyles><BsJustify/></Iconstyles> 
+<MenuIcon onClick={toggle}>
+ <Iconstyles ><BsJustify/></Iconstyles> 
 </MenuIcon>
 <HeaderLeft>
   <Iconstyles><BsSearch/></Iconstyles>

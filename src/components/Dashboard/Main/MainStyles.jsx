@@ -16,6 +16,11 @@ export const MainCards=styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
     margin: 15px 0;
+    @media screen and (max-width: 768px){
+        grid-template-columns: 1fr;
+       gap: 10px;
+       margin-bottom: 0;
+    }
 `;
 export const Card=styled.div`
     display: flex;
@@ -32,6 +37,7 @@ export const CardInner=styled.div`
 `;
 export const CardIcon=styled.div`
     font-size: 25px;
+   color: #1f5751;
 `;
 export const Charts=styled.div`
     display: grid;
@@ -39,10 +45,14 @@ export const Charts=styled.div`
     gap: 20px;
     margin-top: 60px;
     height: 300px;
+    @media screen and (max-width: 578px){
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
 `;
 export const MainH1=styled.h1`
-color: #fff;
+color: #1f5751;
 `;
 export const MainH3=styled.h3`
-    color: #fff
+    color:#1f5751;
 `;

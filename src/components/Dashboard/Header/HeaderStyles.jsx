@@ -12,9 +12,16 @@ export const HeaderContainer=styled.div`
 `;
 export const MenuIcon=styled.div`
     display: none;
+    @media screen and (max-width:992px)
+    {
+        display: inline;
+    }
 `;
 export const HeaderLeft=styled.div`
-    
+     @media screen and (max-width:992px)
+    {
+        display: none;
+    }
 `;
 export const HeaderRight=styled.div`
 display: flex;
@@ -26,4 +33,7 @@ export const Iconstyles=styled.div`
     line-height: 1px;
     font-size: 20px;
     color: #1f5751;
+    &:hover{
+        cursor: pointer;
+    }
 `
