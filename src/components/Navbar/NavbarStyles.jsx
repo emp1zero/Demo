@@ -27,7 +27,6 @@ export const NavContainer=styled.div`
   padding: 0 24px;
   max-width: 1100px;
   width: 100%;
- 
 `;
 export const NavLinkLogo=styled(LinkR)`
    justify-content: flex-start;
@@ -46,7 +45,7 @@ export const ToggleIcon=styled.div`
     position: absolute;
     top: 0;
     color:#fff;
-    right: 0;
+    right: -80px;
     transform: translate(-100px,60%);
     font-size: 1.8rem;
     cursor: pointer;

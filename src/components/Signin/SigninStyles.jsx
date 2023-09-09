@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import img from '../../images/background.jpg'
 
 export const FormContainer= styled.div`
     min-height: 692px;
@@ -10,9 +11,9 @@ export const FormContainer= styled.div`
     top: 0;
     z-index: 0;
     overflow: hidden;
-    background:linear-gradient(108deg,
-    rgba(1,147,86,1)0%,
-    rgba(10,201,122,1)100%);
+    background-image:url(${img});
+    background-size: cover;
+    background-repeat:no-repeat;
 `;
 
 export const FormWrap=styled.div`
@@ -53,6 +54,7 @@ export const Form =styled.form`
     width: 100%;
     z-index: 1;
     display: grid;
+    opacity: 0.9;
     margin: 0 auto;
     padding: 80px 32px;
     border-radius: 4px;
